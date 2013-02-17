@@ -3,7 +3,7 @@ require File.expand_path('../lib/shank/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.name          = "shank"
-  gem.version       = Cornerstone::Source::VERSION
+  gem.version       = Shank::VERSION
   gem.authors       = ["Matt Diebolt", "Daniel X. Moore"]
   gem.email         = ["pixie@pixieengine.com"]
   gem.homepage      = "https://github.com/PixieEngine/Shank"
