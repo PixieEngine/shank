@@ -1,10 +1,12 @@
-Gamepads = (I={}) ->
+root = (exports ? this)
+
+root.Gamepads = (I={}) ->
   state = {} # holds current and previous states
   controllers = [] # controller cache
 
   # Capture the current gamepad state
   snapshot = ->
-    Array::map.call navigator.webkitGamepads || navigator.webkitGetGamepads(), (x) -> 
+    Array::map.call navigator.webkitGamepads || navigator.webkitGetGamepads(), (x) ->
       axes: x.axes
       buttons: x.buttons
 

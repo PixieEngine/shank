@@ -1,4 +1,6 @@
-Joysticks = ( ->
+root = (exports ? this)
+
+root.Joysticks = ( ->
   type = "application/x-boomstickjavascriptjoysticksupport"
   plugin = null
   MAX_BUFFER = 2000

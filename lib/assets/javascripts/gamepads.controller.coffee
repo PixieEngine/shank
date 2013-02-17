@@ -1,13 +1,15 @@
-Gamepads.Controller = (I={}) ->
+root = (exports ? this)
+
+root.Gamepads.Controller = (I={}) ->
   Object.reverseMerge I,
     debugColor: "#000"
-  
+
   MAX_BUFFER = 0.03
   AXIS_MAX = 1 - MAX_BUFFER
   DEAD_ZONE = AXIS_MAX * 0.2
   TRIP_HIGH = AXIS_MAX * 0.75
   TRIP_LOW = AXIS_MAX * 0.5
-  
+
   BUTTON_THRESHOLD = 0.5
 
   buttonMapping =
@@ -38,7 +40,7 @@ Gamepads.Controller = (I={}) ->
 
     "TL": 9
     "TR": 10
-  
+
   currentState = ->
     I.state.current?[I.index]
 

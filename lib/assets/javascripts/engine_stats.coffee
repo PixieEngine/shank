@@ -1,4 +1,6 @@
-Engine.Stats = (I={}, self) ->
+root = (exports ? this)
+
+root.Engine.Stats = (I={}, self) ->
   stats = xStats()
 
   $(stats.element).css

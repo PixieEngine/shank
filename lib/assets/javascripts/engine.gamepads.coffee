@@ -3,17 +3,17 @@ The <code>Gamepads</code> module gives the engine access to gamepads.
 
     # First you need to add the `Gamepads` module to the engine
     Engine.defaultModules.push "Gamepads"
-    
+
     window.engine = Engine
       ...
-    
+
     # Then you need to get a controller reference
     # id = 0 for player 1, etc.
     controller = engine.controller(id)
-    
+
     # Point indicating direction primary axis is held
     direction = controller.position()
-    
+
     # Check if buttons are held
     controller.actionDown("A")
     controller.actionDown("B")
@@ -27,9 +27,11 @@ The <code>Gamepads</code> module gives the engine access to gamepads.
 @param {Object} I Instance variables
 @param {Object} self Reference to the engine
 ###
-Engine.Gamepads = (I, self) ->
+root = (exports ? this)
+
+root.Engine.Gamepads = (I, self) ->
   gamepads = Gamepads()
-  
+
   self.bind "beforeUpdate", ->
     # Update the gamepads
     gamepads.update()
