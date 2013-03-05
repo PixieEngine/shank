@@ -3,7 +3,6 @@
 #= require engine.gamepads
 #= require engine_stats
 #= require error_handler
-#= require game_keys
 #= require gamepads
 #= require gamepads.controller
 #= require joysticks
