@@ -1,0 +1,13 @@
+{
+  "author": "STRd6",
+  "main": null,
+  "name": "Shank",
+  "library": true,
+  "directories": {
+    "lib": "lib",
+    "source": "source",
+    "test": "test"
+  },
+  "libs": {
+  }
+}

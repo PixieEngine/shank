@@ -11,9 +11,7 @@ default, the track is looped.
 @namespace
 ###
 
-root = (exports ? this)
-
-root.Music = (->
+Music = (->
   # TODO: Load this from local storage of user preferences
   globalMusicVolume = 1
   trackVolume = 1
