@@ -15,4 +15,7 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency "rake"
 
+  gem.add_dependency "coffee-script"
+  gem.add_dependency "sprockets"
+  gem.add_dependency "pixie_dust"
 end
