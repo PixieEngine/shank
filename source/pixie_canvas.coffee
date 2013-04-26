@@ -60,7 +60,7 @@
 
       <code class="run"><pre>
       # Set up: Fill canvas with blue
-      canvas.fill("blue")  
+      canvas.fill("blue")
 
       # Clear a portion of the canvas
       canvas.clear
@@ -123,7 +123,7 @@
       @param {Number} [x=0] Optional x position to fill from
       @param {Number} [y=0] Optional y position to fill from
       @param {Number} [width=canvas.width] Optional width of area to fill
-      @param {Number} [height=canvas.height] Optional height of area to fill 
+      @param {Number} [height=canvas.height] Optional height of area to fill
       @param {Bounds} [bounds] bounds object to fill
       @param {String|Color} [color] color of area to fill
 
@@ -237,6 +237,8 @@
         {x, y, radius} = circle if circle
         {x, y} = position if position
 
+        radius = radius.clamp(0, Infinity)
+
         context.beginPath()
         context.arc(x, y, radius, 0, Math.TAU, true)
         context.closePath()
@@ -253,7 +255,7 @@
         return @
 
       ###*
-      Draws a rectangle at the specified position with given 
+      Draws a rectangle at the specified position with given
       width and height. Optionally takes a position, bounds
       and color argument.
 
@@ -605,12 +607,12 @@
 
       # You can also pass a Color object
       canvas.fillColor(Color('sky blue'))
-      </pre></code>      
+      </pre></code>
 
       @name fillColor
       @methodOf PixieCanvas#
 
-      @param {String|Color} [color] color to make the canvas fillColor 
+      @param {String|Color} [color] color to make the canvas fillColor
 
       @returns {PixieCanvas} this
       ###
@@ -638,12 +640,12 @@
 
       # You can also pass a Color object
       canvas.strokeColor(Color('sky blue'))
-      </pre></code>      
+      </pre></code>
 
       @name strokeColor
       @methodOf PixieCanvas#
 
-      @param {String|Color} [color] color to make the canvas strokeColor 
+      @param {String|Color} [color] color to make the canvas strokeColor
 
       @returns {PixieCanvas} this
       ###
@@ -664,12 +666,12 @@
       <code><pre>
       canvas.measureText('Hello World!')
       # => 55
-      </pre></code>      
+      </pre></code>
 
       @name measureText
       @methodOf PixieCanvas#
 
-      @param {String} [text] the text to measure 
+      @param {String} [text] the text to measure
 
       @returns {PixieCanvas} this
       ###
