@@ -1,6 +1,7 @@
 require 'sprockets'
 
 require 'pixie_dust'
+require "harpjs"
 
 if defined? ::Rails
   class Engine < ::Rails::Engine
