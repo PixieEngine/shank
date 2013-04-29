@@ -21,6 +21,16 @@ Music = (->
     loop: "loop"
   .appendTo('body').get(0)
 
+  appendSources = (audio, name) ->
+    [
+      ["ogg", "audio/ogg"]
+      ["mp3", "audio/mpeg"]
+    ].forEach ([extension, mimeType]) ->
+      source = document.createElement('source')
+      source.type = mimeType
+      source.src = "#{name}.#{extension}"
+      audio.appendChild(source)
+
   updateTrackVolume = ->
     track.volume = globalMusicVolume * trackVolume
 
@@ -53,8 +63,9 @@ Music = (->
   ###
   play: (name) ->
     updateTrackVolume()
-    # TODO: Format fallbacks
-    track.src = "#{BASE_URL}/sounds/#{name}.mp3"
+
+    appendSources(track, "#{BASE_URL}/music/#{name}")
+
     track.play()
 
   ###*
